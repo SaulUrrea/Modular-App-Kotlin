@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="20dp"
+    android:layout_marginLeft="@dimen/common_padding_min"
+    android:layout_marginTop="@dimen/common_padding_min"
+    android:layout_marginEnd="@dimen/common_padding_min"
+    android:layout_marginStart="@dimen/common_padding_min"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/common_padding_default">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            tools:text="¡Nueva entrega!"
+            android:textColor="@color/blue"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/tvAdTitle"
+            tools:text="* Envigado - Antioquia"
+            android:layout_marginLeft="@dimen/common_padding_min"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/tvTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:importantForAccessibility="no"
+            android:id="@+id/iconTask"
+            android:src="@drawable/ic_baseline_delivery_dining_24"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="@dimen/common_padding_min"
+            android:background="@drawable/circle_blue"/>
+
+        <TextView
+            android:id="@+id/tvSubtitle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_padding_min"
+            tools:text="123123123"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+        <TextView
+            android:id="@+id/tvSubtitle2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_padding_min"
+            tools:text="Unidades: 01"
+            android:textColor="@color/grey"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubtitle1"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

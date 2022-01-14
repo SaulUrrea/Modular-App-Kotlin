@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:theme="@style/Theme.RecordingApp.AppBarOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fbBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/common_padding_min"
+                app:backgroundTint="#fff"
+                android:elevation="0dp"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_24"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:titleTextColor="@color/blue"
+                app:popupTheme="@style/Theme.RecordingApp.PopupOverlay"/>
+        </LinearLayout>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+    <Button
+        android:id="@+id/btnSucces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/cardInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/buttom"
+        android:text="iniciar entrega"
+        app:icon="@drawable/ic_baseline_keyboard_arrow_right_24"
+        app:iconGravity="end"
+        android:layout_marginBottom="@dimen/common_padding_min"/>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:cardElevation="20dp"
+        android:layout_marginHorizontal="@dimen/common_padding_default"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvShowMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ver mas ..."
+                android:textColor="@color/blue"
+                android:layout_marginEnd="80dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fbHidden"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:layout_marginEnd="@dimen/common_padding_default"
+                android:elevation="0dp"
+                app:backgroundTint="#fff"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
+                app:tint="@color/grey" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/viewHidden"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/common_padding_default">
+                <ImageView
+                    android:id="@+id/profile"
+                    android:layout_marginTop="@dimen/common_padding_default"
+                    android:layout_marginStart="@dimen/common_padding_default"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_baseline_perm_identity_24"/>
+                <ImageView
+                    android:id="@+id/location"
+                    android:layout_marginTop="@dimen/common_padding_default"
+                    android:layout_marginStart="@dimen/common_padding_default"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile"
+                    android:src="@drawable/ic_outline_location_on_24"/>
+                <ImageView
+                    android:id="@+id/phone"
+                    android:layout_marginTop="@dimen/common_padding_default"
+                    android:layout_marginStart="@dimen/common_padding_default"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/location"
+                    android:src="@drawable/ic_outline_call_24"/>
+                <TextView
+                    android:id="@+id/tvDesti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/profile"
+                    app:layout_constraintTop_toTopOf="@+id/profile"
+                    android:text="Destinatario:"
+                    android:textColor="@color/blue"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_marginStart="@dimen/common_padding_min"/>
+                <TextView
+                    android:id="@+id/tvReceiver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/profile"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDesti"
+                    tools:text="Camila Lopez Ramirez"
+                    android:layout_marginStart="@dimen/common_padding_min"/>
+                <TextView
+                    android:id="@+id/tvDir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/location"
+                    app:layout_constraintTop_toTopOf="@+id/location"
+                    tools:text="Calle 4 # 23 Bello"
+                    android:textColor="@color/blue"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_marginStart="@dimen/common_padding_min"/>
+                <TextView
+                    android:id="@+id/tvCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/location"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDir"
+                    tools:text="Machado"
+                    android:layout_marginStart="@dimen/common_padding_min"/>
+                <TextView
+                    android:id="@+id/tvPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/phone"
+                    app:layout_constraintTop_toTopOf="@+id/phone"
+                    android:layout_marginTop="@dimen/common_padding_min"
+                    android:text="Celular:"
+                    android:textColor="@color/blue"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_marginStart="@dimen/common_padding_min"/>
+                <TextView
+                    android:id="@+id/tvPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/tvPhone"
+                    app:layout_constraintTop_toTopOf="@+id/tvPhone"
+                    tools:text="31423233"
+                    android:layout_marginBottom="@dimen/common_padding_min"
+                    android:layout_marginStart="@dimen/common_padding_min"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
