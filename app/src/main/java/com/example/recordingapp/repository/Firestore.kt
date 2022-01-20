@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.recordingapp.MainActivity
 import com.example.recordingapp.Menu
+import com.example.recordingapp.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
@@ -61,7 +62,8 @@ class Firestore {
                 val jsonObject = JSONObject()
                 for (document in documents) {
                     if (!document.data.isNullOrEmpty()) {
-                        Toast.makeText(context, "Ingreso exitoso  " + document.getString("name"), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, R.string.toast_text, Toast.LENGTH_SHORT).show()
+                        Thread.sleep(3000)
                         val intent = Intent(activity, Menu::class.java).apply {
                             putExtra("user", document.getString("name"))
                         }
@@ -77,7 +79,7 @@ class Firestore {
     }
 
     private fun sendErrorMessage(context: Context) {
-        Toast.makeText(context, "Error usuario invalido", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, R.string.toast_text_error, Toast.LENGTH_SHORT).show()
     }
 
     fun actualizarUsuario(coding_employed: String, context: Context) {

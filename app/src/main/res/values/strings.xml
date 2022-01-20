@@ -18,4 +18,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_task">taskModule</string>
     <string name="title_dinamico">Dinamico</string>
+    <string name="toast_text">Ingreso exitoso</string>
+    <string name="toast_text_error">Error usuario no valido</string>
 </resources>

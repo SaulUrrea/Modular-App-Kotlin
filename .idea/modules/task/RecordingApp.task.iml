@@ -4,7 +4,7 @@
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
         <option name="GRADLE_PROJECT_PATH" value=":task" />
-        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" />
+        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" value="7.0.4" />
         <option name="LAST_KNOWN_AGP_VERSION" value="7.0.4" />
       </configuration>
     </facet>
@@ -74,6 +74,11 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../task/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../task/src/main/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../task/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../task/build/generated/ap_generated_sources/debugAndroidTest/out" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../task/build/generated/res/resValues/androidTest/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../task/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../task/build/generated/source/kapt/debugAndroidTest" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../task/build/generated/source/kaptKotlin/debugAndroidTest" isTestSource="true" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../../task/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../task/build" />
     </content>
