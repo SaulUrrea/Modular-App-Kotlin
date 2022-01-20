@@ -24,4 +24,4 @@ jobs:
         target: ${{ matrix.target }}
         arch: x86_64
         profile: Nexus 6
-        script: ./gradlew connectedDebugAndroidTest -Pcucumber -Ptags="@e2e" --info
+        script: ./gradlew connectedAndroidTest
