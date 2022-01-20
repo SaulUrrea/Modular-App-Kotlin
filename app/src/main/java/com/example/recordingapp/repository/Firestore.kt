@@ -5,8 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
-import com.example.recordingapp.MainActivity
-import com.example.recordingapp.Menu
+import com.example.recordingapp.MenuActivity
 import com.example.recordingapp.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -64,7 +63,7 @@ class Firestore {
                     if (!document.data.isNullOrEmpty()) {
                         Toast.makeText(context, R.string.toast_text, Toast.LENGTH_SHORT).show()
                         Thread.sleep(3000)
-                        val intent = Intent(activity, Menu::class.java).apply {
+                        val intent = Intent(activity, MenuActivity::class.java).apply {
                             putExtra("user", document.getString("name"))
                         }
                         activity.startActivity(intent)

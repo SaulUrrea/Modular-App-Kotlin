@@ -13,6 +13,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import org.hamcrest.Matchers.allOf
 import org.hamcrest.core.IsNot.not
 
 
@@ -33,7 +34,21 @@ class LoginTest {
     }
 
     @Test
-    fun loginTest() {
+    fun onLoginIsFailed() {
+        onView(withId(R.id.etUser)).perform(ViewActions.clearText())
+            .perform(ViewActions.typeText(USER), ViewActions.closeSoftKeyboard())
+
+        onView(withId(R.id.etPassword)).perform(ViewActions.clearText())
+            .perform(ViewActions.typeText(ERROR_PASSWORD), ViewActions.closeSoftKeyboard())
+
+        onView(withId(R.id.btnInto))
+            .perform(ViewActions.click())
+            .check(matches(isDisplayed()))
+
+    }
+
+    @Test
+    fun onLoginIsCorrect() {
 
         onView(withId(R.id.btnInto))
             .perform(ViewActions.click())
@@ -49,25 +64,17 @@ class LoginTest {
             .perform(ViewActions.click())
             .check(matches(isEnabled()))
 
-        onView(withId(R.id.btnInto))
+        Thread.sleep(2000)
+
+        MenuTest().appLaunchesSuccessfully()
+
+        MenuTest().onValidateComponents()
+
+        Thread.sleep(2000)
+
+        onView(withId(R.id.btnExit))
             .perform(ViewActions.click())
-            .check(matches(isDisplayed()))
 
     }
-
-    @Test
-    fun loginFailedTest() {
-        onView(withId(R.id.etUser)).perform(ViewActions.clearText())
-            .perform(ViewActions.typeText(USER), ViewActions.closeSoftKeyboard())
-
-        onView(withId(R.id.etPassword)).perform(ViewActions.clearText())
-            .perform(ViewActions.typeText(ERROR_PASSWORD), ViewActions.closeSoftKeyboard())
-
-        onView(withId(R.id.btnInto))
-            .perform(ViewActions.click())
-            .check(matches(isDisplayed()))
-
-    }
-
 
 }
